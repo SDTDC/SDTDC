@@ -1,72 +1,82 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = [...document.querySelectorAll('.page-section')];
+  const navLinks = [...document.querySelectorAll('.nav-link')];
+  const nav = document.getElementById('siteNav');
+  const menuToggle = document.getElementById('menuToggle');
+  const year = document.getElementById('currentYear');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (year) year.textContent = new Date().getFullYear();
 
+  function closeMenu() {
+    nav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+  }
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section");
+  function showSection(targetId, updateHistory = true) {
+    const target = sections.find(section => section.id === targetId) || sections[0];
+    if (!target) return;
 
-    function showSection(targetId) {
-
-        sections.forEach(section => {
-            section.classList.toggle(
-                "active",
-                section.id === targetId
-            );
-        });
-
-        navLinks.forEach(link => {
-            link.classList.toggle(
-                "active",
-                link.getAttribute("href") === `#${targetId}`
-            );
-        });
-
-        document
-            .getElementById("mobileMenu")
-            .classList.remove("active");
-    }
-
+    sections.forEach(section => {
+      const isActive = section === target;
+      section.classList.toggle('active', isActive);
+      section.setAttribute('aria-hidden', String(!isActive));
+    });
 
     navLinks.forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            event.preventDefault();
-
-            const targetId =
-                link.getAttribute("href").substring(1);
-
-            showSection(targetId);
-        });
-
+      const isActive = link.getAttribute('href') === `#${target.id}`;
+      link.classList.toggle('active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
     });
 
+    closeMenu();
+    if (updateHistory && window.location.hash !== `#${target.id}`) {
+      history.replaceState(null, '', `#${target.id}`);
+    }
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
 
-    showSection("home");
-
-
-
-
-    const fadeElements =
-        document.querySelectorAll(".fade-in");
-
-    fadeElements.forEach((element, index) => {
-
-        setTimeout(() => {
-            element.classList.add("show");
-        }, index * 200);
-
+    target.querySelectorAll('.fade-in').forEach((element, index) => {
+      element.classList.remove('show');
+      if (reducedMotion) {
+        element.classList.add('show');
+      } else {
+        window.setTimeout(() => element.classList.add('show'), Math.min(index * 75, 600));
+      }
     });
+  }
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      showSection(link.getAttribute('href').slice(1));
+    });
+  });
 
+  document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(link => {
+    link.addEventListener('click', event => {
+      const targetId = link.getAttribute('href').slice(1);
+      if (!sections.some(section => section.id === targetId)) return;
+      event.preventDefault();
+      showSection(targetId);
+    });
+  });
 
-    window.toggleMobileMenu = function () {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
 
-        const menu =
-            document.getElementById("mobileMenu");
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
 
-        menu.classList.toggle("active");
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 680) closeMenu();
+  });
 
-    };
-
+  const initialSection = window.location.hash.slice(1);
+  showSection(initialSection || 'home', false);
 });

@@ -1,152 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sentro Dalisay Theater and Dance Company</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3b0712">
+  <meta name="description" content="The official website of Sentro Dalisay Theater and Dance Company.">
+  <title>Sentro Dalisay | Theater and Dance Company</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="Sentro Dalisay home">
+      <img src="sentro logo.jpg" alt="Sentro Dalisay logo" class="logo">
+      <span class="brand-name">Sentro Dalisay <small>Theater &amp; Dance Company</small></span>
+    </a>
 
-<header id="siteHeader">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
 
-    <div class="logo-container">
-        <img src="sentro logo.jpg"
-             alt="Sentro Dalisay Theater and Dance Company Logo"
-             class="logo">
-
-        <h1 class="brand-name">
-            Sentro Dalisay Theater and Dance Company
-        </h1>
-    </div>
-
-    <nav class="nav-links">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#performances" class="nav-link">our performances</a>
-        <a href="#dancers" class="nav-link">our dancers</a>
+    <nav class="nav-links" id="siteNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active" aria-current="page">Home</a>
+      <a href="#performances" class="nav-link">Performances</a>
+      <a href="#dancers" class="nav-link">Our Dancers</a>
     </nav>
+  </header>
 
-    <div class="hamburger" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+  <main>
+    <section id="home" class="page-section home-section active" aria-labelledby="home-title">
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow fade-in">STORIES • MOVEMENT • COMMUNITY</p>
+          <h1 id="home-title" class="fade-in">Where stories <em>come alive.</em></h1>
+          <p class="hero-lead fade-in">Welcome to Sentro Dalisay Theater and Dance Company.</p>
+          <p class="hero-description fade-in"></p>
+          <div class="hero-actions fade-in">
+            <a class="button button-primary" href="#performances">Explore our work <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#dancers">Meet the dancers <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-art fade-in" aria-label="Sentro Dalisay emblem">
+          <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+          <div class="art-center"><img src="sentro logo.jpg" alt="Sentro Dalisay emblem"></div>
+          <span class="spark spark-one">✳</span><span class="spark spark-two">✦</span>
+        </div>
+      </div>
 
-    <div class="menu-mobile" id="mobileMenu">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#performances" class="nav-link">our performances</a>
-        <a href="#dancers" class="nav-link">our dancers</a>
-    </div>
+      <div class="intro-band fade-in">
+        <span class="section-kicker">OUR STORY</span>
+        <div>
+          <h2>A stage for every story.</h2>
+          <p></p>
+        </div>
+      </div>
 
-</header>
+      <div class="home-details">
+        <article class="info-card fade-in">
+          <span class="card-number">01</span>
+          <p class="eyebrow">WHO WE ARE</p>
+          <h2>Our company</h2>
+          <p></p>
+        </article>
+        <article class="info-card info-card-dark fade-in">
+          <span class="card-number">02</span>
+          <p class="eyebrow">WITH GRATITUDE</p>
+          <h2>Our beloved Tatays</h2>
+          <p></p>
+        </article>
+      </div>
 
+      <div class="mission-vision">
+        <article class="statement-card fade-in">
+          <span class="statement-icon" aria-hidden="true">✳</span>
+          <p class="eyebrow">WHAT GUIDES US</p>
+          <h2>Our Mission</h2>
+          <p></p>
+        </article>
+        <article class="statement-card statement-card-accent fade-in">
+          <span class="statement-icon" aria-hidden="true">✦</span>
+          <p class="eyebrow">WHAT WE ASPIRE TO</p>
+          <h2>Our Vision</h2>
+          <p></p>
+        </article>
+      </div>
+    </section>
 
-<section id="home" class="home-section">
+    <section id="performances" class="page-section content-section performances-section" aria-labelledby="performances-title">
+      <div class="section-heading fade-in">
+        <p class="eyebrow">ON AND BEYOND THE STAGE</p>
+        <h1 id="performances-title">Our <em>Performances</em></h1>
+        <p>A collection of moments, movement, and stories shared with our audience.</p>
+      </div>
+      <div class="feature-panel fade-in">
+        <div class="feature-mark" aria-hidden="true">SD</div>
+        <div>
+          <p class="eyebrow">THE COMPANY IN MOTION</p>
+          <h2>Every performance tells a story.</h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="social-section fade-in">
+        <p class="eyebrow">STAY CONNECTED</p>
+        <h2>Follow our journey.</h2>
+        <p>Find more of Sentro Dalisay online.</p>
+        <div class="social-links">
+          <a class="social-card" href="https://www.facebook.com/people/Sentro-Dalisay-Theater-Dance-Company/61588429287035/" target="_blank" rel="noopener noreferrer">
+            <img src="FB logo.png" alt="" class="social-icon"><span><strong>Facebook</strong><small>News, photos &amp; updates</small></span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-card" href="https://www.youtube.com/@SentroDalisay" target="_blank" rel="noopener noreferrer">
+            <img src="YT logo.jpg" alt="" class="social-icon"><span><strong>YouTube</strong><small>Videos &amp; performances</small></span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="home-content">
+    <section id="dancers" class="page-section content-section dancers-section" aria-labelledby="dancers-title">
+      <div class="section-heading fade-in">
+        <p class="eyebrow">THE PEOPLE BEHIND THE PERFORMANCE</p>
+        <h1 id="dancers-title">Meet our <em>Dancers</em></h1>
+        <p>Meet the members who bring Sentro Dalisay's performances to life.</p>
+      </div>
 
-        <img src="sentro logo.jpg"
-             alt="Sentro Dalisay Theater and Dance Company"
-             class="rounded-image fade-in">
+      <div class="dancers-intro fade-in">
+        <span class="dancers-intro-mark" aria-hidden="true">✳</span>
+        <div>
+          <p class="eyebrow">ONE COMPANY, MANY STORIES</p>
+          <h2>Get to know the faces and names that make up the Sentro Dalisay family.</h2>
+        </div>
+      </div>
 
-        <h1 class="fade-in">
-            Welcome to Sentro Dalisay
-        </h1>
+      <div class="dancers-grid" aria-label="Dancer profiles">
+        <article class="dancer-card fade-in">
+                 <img src="dancers/dancer-01.jpg" alt="Dancer 01" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Rusty Lex Ferrer</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-02.jpg" alt="Dancer 02" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-03.jpg" alt="Dancer 03" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-04.jpg" alt="Dancer 04" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-05.jpg" alt="Dancer 05" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-06.jpg" alt="Dancer 06" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-07.jpg" alt="Dancer 07" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-08.jpg" alt="Dancer 08" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer Name</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-09.jpg" alt="Dancer 09" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 09</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-10.jpg" alt="Dancer 10" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 10</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-11.jpg" alt="Dancer 11" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 11</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-12.jpg" alt="Dancer 12" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 12</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-13.jpg" alt="Dancer 13" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 13</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-14.jpg" alt="Dancer 14" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 14</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-15.jpg" alt="Dancer 15" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 15</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-16.jpg" alt="Dancer 16" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 16</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-17.jpg" alt="Dancer 17" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 17</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-18.jpg" alt="Dancer 18" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 18</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-19.jpg" alt="Dancer 19" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 19</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-20.jpg" alt="Dancer 20" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 20</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-21.jpg" alt="Dancer 21" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 21</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-22.jpg" alt="Dancer 22" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 22</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-23.jpg" alt="Dancer 23" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 23</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-24.jpg" alt="Dancer 24" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 24</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-25.jpg" alt="Dancer 25" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 25</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-26.jpg" alt="Dancer 26" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 26</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-27.jpg" alt="Dancer 27" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 27</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-28.jpg" alt="Dancer 28" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 28</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-29.jpg" alt="Dancer 29" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 29</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-30.jpg" alt="Dancer 30" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 30</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-31.jpg" alt="Dancer 31" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 31</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-32.jpg" alt="Dancer 32" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 32</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-33.jpg" alt="Dancer 33" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 33</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-34.jpg" alt="Dancer 34" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 34</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-35.jpg" alt="Dancer 35" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 35</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-36.jpg" alt="Dancer 36" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 36</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-37.jpg" alt="Dancer 37" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 37</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-38.jpg" alt="Dancer 38" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 38</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-39.jpg" alt="Dancer 39" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 39</h2>
+          </div>
+        </article>
+        <article class="dancer-card fade-in">
+          <img src="dancers/dancer-40.jpg" alt="Dancer 40" class="dancer-photo">
+          <div class="dancer-info">
+            <p class="dancer-role">MEMBER</p>
+            <h2>Dancer 40</h2>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-        <h2 class="fade-in">
-            Theater and Dance Company
-        </h2>
-
-        <h2 class="fade-in">
-           introduction
-        </h2>
-
-         <p class="intro fade-in">
-            introoooooooooooo
-        </p>
-        
-        <h2 class="fade-in">
-           description
-        </h2>
-
-         <p class="intro fade-in">
-            lagyan ko ba to ng description?
-        </p>
-
-        <h2 class="fade-in">
-           our beloved tatays
-        </h2>
-
-        <p class="intro fade-in">
-            about kay papa rusty and papa kenneth
-        </p>
-           
-
-    </div>
-
-    <div class="mission-vision">
-
-    <div class="about-block fade-in">
-        <h2>Mission</h2>
-        <p>
-            lagyan natin ng ganto tapos dapat kabisado ng mga dancers
-        </p>
-    </div>
-
-    <div class="about-block fade-in">
-        <h2>Vision</h2>
-        <p>
-            syempre dapat eto din kabisado ng mga dancers
-        </p>
-    </div>
-
-</div>
-
-</section>
-
-
-<section id="performances" class="performances-section">
-
-    <h2 class="fade-in">our performances</h2>
-
-    <p class="fade-in">
-        lagay natin dito yung mga performances natin
-    </p>
-    <h2 class="fade-in">follow us on</h2>
-
-    <div class="links-logo-container">
-
-    <h2 class="about-block fade-in">
-        <button class="btn" onclick="window.location.href='https://www.facebook.com/people/Sentro-Dalisay-Theater-Dance-Company/61588429287035/'">
-           <img src="FB logo.png" alt="Facebook Logo" class="links-logo">
-        </button>
-    </h2>
-
-    <h2 class="about-block fade-in">
-        <button class="btn" onclick="window.location.href='https://www.youtube.com/@SentroDalisay'">
-           <img src="YT logo.jpg" alt="youtube Logo" class="links-logo">
-        </button>
-
-</section>
-<section id="dancers" class="dancers-section">
-
-    <h2 class="fade-in">our dancers</h2>
-
-    <p class="fade-in">
-        lagay natin dito yung mga dancers natin
-    </p>
-
-</section>
-
-<footer>
-    <p>
-        &copy; Sentro Dalisay Theater and Dance Company.
-    </p>
-</footer>
-
+  <footer class="site-footer">
+    <a class="footer-brand" href="#home">Sentro Dalisay<span> Theater &amp; Dance Company</span></a>
+    <p>Stories live on when we share them.</p>
+    <small>© <span id="currentYear">2026</span> Sentro Dalisay Theater and Dance Company. All rights reserved.</small>
+  </footer>
 </body>
 </html>
